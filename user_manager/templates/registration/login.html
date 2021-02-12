@@ -1,0 +1,31 @@
+<!-- templates/base.html-->
+{% extends 'base.html' %} {% load static %}
+{% block content %}
+<div id="container">
+    <div class="left-home">
+        <img src="/media/book.jpg" height='100%' width='95%'>
+    </div>
+
+    <div class="right-home">
+        <div class="login">
+           <img src="/media/sapat.png" height="50%" width="50%">
+           <h2 class="heading">Bookkeeper</h2>
+           <form id="Login" method="POST" class="formsect">
+            {% csrf_token %}
+              <div class="form-group">
+                 <input type="email" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" required>
+              </div>
+              <br>
+              <div class="form-group">
+                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  required name="password">
+              </div>
+              <br>
+              <input type="submit" class="btn btn-primary" value="Login">
+           </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
